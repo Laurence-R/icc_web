@@ -1,6 +1,6 @@
-import { HeroSection } from "@/components/sections/HeroSection";
-import { ResearchInterests } from "@/components/sections/ResearchInterests";
-import { SelectedPublications } from "@/components/sections/SelectedPublications";
+import { HeroSection } from "@/components/sections/home/HeroSection";
+import { ResearchInterests } from "@/components/sections/home/ResearchInterests";
+import { SelectedPublications } from "@/components/sections/home/SelectedPublications";
 
 export default function Home() {
   return (
