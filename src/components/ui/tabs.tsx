@@ -109,18 +109,25 @@ export const FadeInDiv = ({
       {tabs.map((tab, idx) => (
         <motion.div
           key={tab.value}
-          layoutId={tab.value}
-          style={{
+          initial={{ opacity: 0, y: 20 }}
+          animate={{
+            opacity: idx < 3 ? 1 - idx * 0.1 : 0,
+            y: 0,
             scale: 1 - idx * 0.1,
             top: hovering ? idx * -50 : 0,
-            zIndex: -idx,
-            opacity: idx < 3 ? 1 - idx * 0.1 : 0,
-            ...(idx === 0 && contentMaxHeight
-              ? { maxHeight: contentMaxHeight, overflowY: "auto" as const }
-              : {}),
           }}
-          animate={{
-            y: isActive(tab) ? [0, 40, 0] : 0,
+          transition={{
+            duration: 0.4,
+            ease: "easeOut",
+          }}
+          style={{
+            zIndex: -idx,
+            ...(contentMaxHeight
+              ? {
+                maxHeight: contentMaxHeight,
+                overflowY: idx === 0 ? ("auto" as const) : ("hidden" as const),
+              }
+              : {}),
           }}
           className={cn(
             "w-full",
