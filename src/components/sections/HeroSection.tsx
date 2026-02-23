@@ -1,262 +1,218 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Mail, MapPin, BookOpen, Briefcase, Award, ArrowDown, ExternalLink } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+import { Mail, ExternalLink } from "lucide-react";
+import { Spotlight } from "@/components/ui/spotlight-new";
+import { FlipWords } from "@/components/ui/flip-words";
 
-const stats = [
-    {
-        icon: BookOpen,
-        value: "182",
-        label: "學術論文",
-        sublabel: "Publications",
-        color: "from-blue-500 to-cyan-400",
-    },
-    {
-        icon: Briefcase,
-        value: "43",
-        label: "研究計畫",
-        sublabel: "Projects",
-        color: "from-violet-500 to-purple-400",
-    },
-    {
-        icon: Award,
-        value: "43",
-        label: "榮譽獎項",
-        sublabel: "Awards",
-        color: "from-amber-500 to-orange-400",
-    },
-];
+const flipWords = ["無線網路", "行動計算", "車載網路", "智慧車聯網", "共乘協定"];
 
 export function HeroSection() {
-    return (
-        <section className="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50/50 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950">
-            {/* Animated background orbs */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-                <div className="orb-1 absolute -top-32 -left-32 w-96 h-96 rounded-full bg-blue-400/20 dark:bg-blue-500/10 blur-3xl" />
-                <div className="orb-2 absolute top-1/4 -right-32 w-80 h-80 rounded-full bg-violet-400/15 dark:bg-violet-500/10 blur-3xl" />
-                <div className="orb-3 absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-cyan-400/15 dark:bg-cyan-500/8 blur-3xl" />
-                {/* Grid pattern overlay */}
-                <div
-                    className="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]"
-                    style={{
-                        backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-                        backgroundSize: '40px 40px',
-                    }}
-                />
-            </div>
+  return (
+    <section className="relative flex h-screen flex-col items-center justify-center overflow-hidden bg-white dark:bg-gray-950">
+      {/* Spotlight */}
+      <Spotlight />
 
-            <div className="container relative mx-auto px-4 pt-24 pb-12 md:pt-32 md:pb-16 lg:pt-36">
-                <div className="grid gap-12 lg:grid-cols-5 lg:gap-16 items-center">
-                    {/* Left side - Text content (3 cols) */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                        className="lg:col-span-3 space-y-8"
-                    >
-                        {/* Title badge */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                        >
-                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-sm font-medium text-blue-700 dark:text-blue-300">
-                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                                教授 Professor
-                            </div>
-                        </motion.div>
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 pb-16 text-center">
+        {/* Photo — transparent PNG with gradient aura */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7 }}
+          className="relative mb-4"
+        >
+          {/* Animated glow ring */}
+          <motion.div
+            animate={{ scale: [1, 1.05, 1], opacity: [0.5, 0.8, 0.5] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute inset-0 -m-3 rounded-full bg-gradient-to-br from-blue-400/30 via-violet-400/20 to-cyan-400/30 blur-2xl dark:from-blue-500/20 dark:via-violet-500/15 dark:to-cyan-500/20"
+          />
 
-                        {/* Name */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                            className="space-y-3"
-                        >
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white">
-                                張英超
-                            </h1>
-                            <p className="text-2xl sm:text-3xl md:text-4xl font-light text-slate-500 dark:text-slate-400 tracking-wide">
-                                Ing-Chau Chang
-                            </p>
-                        </motion.div>
+          {/* Subtle inner ring */}
+          <div className="absolute inset-0 -m-1 rounded-full bg-gradient-to-b from-blue-200/40 to-violet-200/40 blur-md dark:from-blue-400/10 dark:to-violet-400/10" />
 
-                        {/* Department */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                        >
-                            <p className="text-xl text-slate-600 dark:text-slate-300 font-medium">
-                                國立彰化師範大學 資訊工程學系
-                            </p>
-                        </motion.div>
+          {/* Photo container — no clip, let the transparent silhouette breathe */}
+          <div className="relative h-36 w-36 sm:h-40 sm:w-40 md:h-60 md:w-60">
+            <Image
+              src="/images/icc_hero.png"
+              alt="張英超教授"
+              fill
+              className="object-contain drop-shadow-lg dark:drop-shadow-[0_4px_24px_rgba(100,140,255,0.15)]"
+              priority
+            />
+          </div>
+        </motion.div>
 
-                        {/* Quote with glass accent */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                            className="relative"
-                        >
-                            <div className="glass-card rounded-xl p-5">
-                                <div className="absolute left-0 top-0 bottom-0 w-1 rounded-full bg-gradient-to-b from-blue-500 to-violet-500" />
-                                <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed pl-4 italic">
-                                    「致力於智慧車聯網技術與創新應用之研究與發展。」
-                                </p>
-                            </div>
-                        </motion.div>
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-6xl"
+        >
+          張英超
+        </motion.h1>
 
-                        {/* CTA Buttons */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                            className="flex flex-col sm:flex-row gap-4 pt-2"
-                        >
-                            <Button
-                                size="lg"
-                                className="gap-2 cursor-pointer bg-gradient-to-r from-blue-600 to-violet-600 hover:from-blue-700 hover:to-violet-700 text-white shadow-lg shadow-blue-500/25 dark:shadow-blue-500/15 border-0 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/30"
-                                asChild
-                            >
-                                <a
-                                    href="https://mail.google.com/mail/?view=cm&fs=1&to=icchang@cc.ncue.edu.tw"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <Mail className="h-4 w-4" />
-                                    Email 聯絡
-                                </a>
-                            </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                className="gap-2 cursor-pointer glass-card glass-card-hover border-slate-200 dark:border-white/10 hover:border-blue-300 dark:hover:border-blue-500/30"
-                                asChild
-                            >
-                                <a
-                                    href="https://ieeexplore.ieee.org/author/37640555800"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <Image
-                                        src="/IEEE_logo.svg"
-                                        alt="IEEE"
-                                        width={28}
-                                        height={28}
-                                        className="h-7 w-7"
-                                    />
-                                    IEEE Xplore
-                                    <ExternalLink className="h-3.5 w-3.5 opacity-50" />
-                                </a>
-                            </Button>
-                        </motion.div>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-2 text-lg font-light tracking-widest text-slate-400 dark:text-slate-500 sm:text-xl"
+        >
+          Ing-Chau Chang
+        </motion.p>
 
-                        {/* Contact info */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.6, delay: 0.6 }}
-                            className="flex flex-col gap-3 pt-2 text-sm text-slate-500 dark:text-slate-400"
-                        >
-                            <div className="flex items-center gap-2.5">
-                                <Mail className="h-4 w-4 text-blue-500" />
-                                <span>icchang@cc.ncue.edu.tw</span>
-                            </div>
-                            <div className="flex items-center gap-2.5">
-                                <MapPin className="h-4 w-4 text-violet-500" />
-                                <span>研究室：寶山校區 工學院大樓 E136</span>
-                            </div>
-                            <div className="flex items-center gap-2.5">
-                                <MapPin className="h-4 w-4 text-cyan-500" />
-                                <span>實驗室：無線與行動網路實驗室 E114</span>
-                            </div>
-                        </motion.div>
-                    </motion.div>
+        {/* Role */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mt-3 text-base text-slate-500 dark:text-slate-400 sm:text-lg"
+        >
+          國立彰化師範大學 · 資訊工程學系 · 教授
+        </motion.p>
 
-                    {/* Right side - Photo (2 cols) */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                        className="lg:col-span-2 relative"
-                    >
-                        <div className="relative max-w-sm mx-auto">
-                            {/* Decorative glow */}
-                            <div className="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 via-violet-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-60 dark:opacity-40" />
-                            {/* Glass frame */}
-                            <div className="relative glass-card rounded-2xl p-2 overflow-hidden">
-                                <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: '3/4' }}>
-                                    <Image
-                                        src="/images/icc_photo.jpg"
-                                        alt="張英超教授"
-                                        fill
-                                        className="object-cover"
-                                        priority
-                                    />
-                                </div>
-                                {/* Bottom glass overlay with name */}
-                                <div className="absolute bottom-2 left-2 right-2 rounded-xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-md p-4 border border-white/30 dark:border-white/5">
-                                    <p className="font-bold text-slate-900 dark:text-white text-lg">張英超 教授</p>
-                                    <p className="text-sm text-slate-600 dark:text-slate-300">彰化師大 資工系</p>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                </div>
+        {/* FlipWords tagline */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-4 text-lg text-slate-600 dark:text-slate-300 sm:text-xl"
+        >
+          致力於
+          <FlipWords
+            words={flipWords}
+            duration={2500}
+            className="font-semibold text-blue-600 dark:text-blue-400"
+          />
+          之研究
+        </motion.div>
 
-                {/* Statistics Cards */}
-                <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mt-16 md:mt-24"
-                >
-                    {stats.map((stat, index) => (
-                        <motion.div
-                            key={stat.label}
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-                            className="group glass-card glass-card-hover rounded-2xl p-6 cursor-default"
-                        >
-                            <div className="flex items-start justify-between mb-4">
-                                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center shadow-lg`}>
-                                    <stat.icon className="h-6 w-6 text-white" />
-                                </div>
-                                <span className="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                                    {stat.sublabel}
-                                </span>
-                            </div>
-                            <div className="stat-glow text-4xl font-bold text-slate-900 dark:text-white mb-1">
-                                {stat.value}
-                            </div>
-                            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                                {stat.label}
-                            </p>
-                        </motion.div>
-                    ))}
-                </motion.div>
+        {/* Divider */}
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="my-5 h-px w-24 bg-slate-200 dark:bg-white/10"
+        />
 
-                {/* Scroll indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 0.8 }}
-                    className="flex justify-center mt-16"
-                >
-                    <motion.div
-                        animate={{ y: [0, 8, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500"
-                    >
-                        <span className="text-xs tracking-widest uppercase">Scroll</span>
-                        <ArrowDown className="h-4 w-4" />
-                    </motion.div>
-                </motion.div>
-            </div>
-        </section>
-    );
+        {/* CTA buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+          className="flex flex-wrap items-center justify-center gap-3"
+        >
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=icchang@cc.ncue.edu.tw"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+          >
+            <Mail className="h-4 w-4" />
+            聯絡我
+          </a>
+
+          <a
+            href="https://ieeexplore.ieee.org/author/37640555800"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-5 py-2.5 text-sm font-medium text-slate-700 backdrop-blur-sm transition-colors hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10"
+          >
+            <Image
+              src="/IEEE_logo.svg"
+              alt="IEEE"
+              width={18}
+              height={18}
+              className="h-[18px] w-[18px]"
+            />
+            IEEE Xplore
+            <ExternalLink className="h-3.5 w-3.5 opacity-40" />
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Scroll indicator — anchored to bottom */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className="absolute bottom-20 left-1/2 -translate-x-1/2"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+          className="group flex flex-col items-center gap-3 cursor-pointer"
+          onClick={() =>
+            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+          }
+        >
+          {/* Glowing mouse outline */}
+          <div className="relative flex h-9 w-5.5 items-start justify-center rounded-full border-2 border-slate-300/70 p-1 dark:border-white/20">
+            {/* Inner scroll dot */}
+            <motion.div
+              animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="h-1.5 w-1.5 rounded-full bg-gradient-to-b from-blue-400 to-violet-500 shadow-[0_0_6px_rgba(99,102,241,0.6)]"
+            />
+            {/* Glow behind mouse */}
+            <div className="absolute -inset-2 rounded-full bg-gradient-to-b from-blue-400/10 to-violet-400/10 blur-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-blue-400/20 dark:to-violet-400/20" />
+          </div>
+
+          {/* Chevron arrows cascading */}
+          <div className="flex flex-col items-center -space-y-1">
+            <motion.svg
+              animate={{ opacity: [0.2, 0.8, 0.2], y: [0, 2, 0] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              className="text-blue-400/70 dark:text-blue-400/50"
+            >
+              <path
+                d="M1 1l6 6 6-6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </motion.svg>
+            <motion.svg
+              animate={{ opacity: [0.1, 0.5, 0.1], y: [0, 2, 0] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.2,
+              }}
+              width="14"
+              height="8"
+              viewBox="0 0 14 8"
+              className="text-violet-400/60 dark:text-violet-400/40"
+            >
+              <path
+                d="M1 1l6 6 6-6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </motion.svg>
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  );
 }

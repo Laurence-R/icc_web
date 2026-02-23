@@ -4,15 +4,15 @@
     "editor.detectIndentation": false,
     "editor.formatOnSave": true,
     "[typescript]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[typescriptreact]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[javascript]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[json]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     }
 }
