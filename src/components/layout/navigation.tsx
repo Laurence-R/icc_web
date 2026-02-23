@@ -53,13 +53,13 @@ export function Navigation() {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:bg-gray-900/95 dark:supports-[backdrop-filter]:bg-gray-900/80">
+        <nav className="nav-glass sticky top-0 z-50 w-full">
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
                     {/* Logo / Name */}
                     <Link
                         href="/"
-                        className="flex items-center space-x-3 font-bold text-xl text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        className="flex items-center space-x-3 font-bold text-xl text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                     >
                         <Image
                             src="/NCUE_seal.svg"
