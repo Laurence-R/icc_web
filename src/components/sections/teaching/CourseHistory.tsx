@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { motion, AnimatePresence } from "motion/react";
 import {
   Search,
   ExternalLink,
@@ -67,8 +66,8 @@ export function CourseHistory() {
               key={t}
               onClick={() => setFilter(t)}
               className={`rounded-lg px-4 py-2 text-xs font-medium transition-all ${filter === t
-                  ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-md"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-white/10"
+                ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-md"
+                : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-white/10"
                 }`}
             >
               {t === "all" ? "全部" : t}
@@ -85,25 +84,23 @@ export function CourseHistory() {
         <div className="space-y-4">
           {filtered.map((sem, idx) => {
             const key = `${sem.year}-${sem.semester}`;
-            const isOpen = expandedKey === key || expandedKey === null;
+            const isOpen = expandedKey === key;
 
             return (
-              <motion.div
+              <div
                 key={key}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: idx * 0.03 }}
+                className="animate-in fade-in slide-in-from-bottom-2 duration-300"
+                style={{ animationDelay: `${idx * 30}ms`, animationFillMode: "both" }}
               >
                 {/* Dot */}
                 <div className="absolute left-0 mt-3 h-3.5 w-3.5 rounded-full border-2 border-white bg-gradient-to-br from-blue-500 to-violet-500 shadow dark:border-gray-950" />
 
                 {/* Card */}
-                <div className="ml-4 overflow-hidden rounded-xl border border-slate-200/60 bg-white/80 backdrop-blur-sm dark:border-white/5 dark:bg-white/[0.03]">
+                <div className="ml-4 overflow-hidden rounded-xl border border-slate-200/60 bg-white dark:border-white/5 dark:bg-white/[0.03]">
                   {/* Header */}
                   <button
                     onClick={() =>
-                      setExpandedKey(isOpen && expandedKey !== null ? null : key)
+                      setExpandedKey(isOpen ? null : key)
                     }
                     className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-slate-50 dark:hover:bg-white/5"
                   >
@@ -118,63 +115,52 @@ export function CourseHistory() {
                         {sem.courses.length} 門
                       </span>
                     </div>
-                    <motion.div
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ChevronDown className="h-4 w-4 text-slate-400" />
-                    </motion.div>
+                    <ChevronDown
+                      className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                    />
                   </button>
 
                   {/* Courses */}
-                  <AnimatePresence>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0 }}
-                        animate={{ height: "auto" }}
-                        exit={{ height: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="overflow-hidden"
-                      >
-                        <div className="space-y-1 border-t border-slate-100 px-4 py-3 dark:border-white/5">
-                          {sem.courses.map((course, ci) => (
-                            <a
-                              key={ci}
-                              href={course.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="group/row flex items-center justify-between rounded-lg px-3 py-2.5 transition-colors hover:bg-slate-50 dark:hover:bg-white/5"
-                            >
-                              <div className="flex items-center gap-3">
-                                <GraduationCap className="h-4 w-4 flex-shrink-0 text-slate-400 transition-colors group-hover/row:text-blue-500" />
-                                <div>
-                                  <span className="text-sm font-medium text-slate-800 transition-colors group-hover/row:text-blue-600 dark:text-slate-200 dark:group-hover/row:text-blue-400">
-                                    {course.name}
+                  {isOpen && (
+                    <div className="overflow-hidden">
+                      <div className="space-y-1 border-t border-slate-100 px-4 py-3 dark:border-white/5">
+                        {sem.courses.map((course, ci) => (
+                          <a
+                            key={ci}
+                            href={course.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/row flex items-center justify-between rounded-lg px-3 py-2.5 transition-colors hover:bg-slate-50 dark:hover:bg-white/5"
+                          >
+                            <div className="flex items-center gap-3">
+                              <GraduationCap className="h-4 w-4 flex-shrink-0 text-slate-400 transition-colors group-hover/row:text-blue-500" />
+                              <div>
+                                <span className="text-sm font-medium text-slate-800 transition-colors group-hover/row:text-blue-600 dark:text-slate-200 dark:group-hover/row:text-blue-400">
+                                  {course.name}
+                                </span>
+                                <div className="mt-0.5 flex items-center gap-1.5">
+                                  <span className="text-[11px] text-slate-400 dark:text-slate-500">
+                                    {course.code}
                                   </span>
-                                  <div className="mt-0.5 flex items-center gap-1.5">
-                                    <span className="text-[11px] text-slate-400 dark:text-slate-500">
-                                      {course.code}
-                                    </span>
-                                    <span
-                                      className={`rounded px-1.5 py-px text-[10px] font-semibold text-white ${course.type === "必修"
-                                          ? "bg-rose-500"
-                                          : "bg-blue-500"
-                                        }`}
-                                    >
-                                      {course.type}
-                                    </span>
-                                  </div>
+                                  <span
+                                    className={`rounded px-1.5 py-px text-[10px] font-semibold text-white ${course.type === "必修"
+                                      ? "bg-rose-500"
+                                      : "bg-blue-500"
+                                      }`}
+                                  >
+                                    {course.type}
+                                  </span>
                                 </div>
                               </div>
-                              <ExternalLink className="h-3.5 w-3.5 flex-shrink-0 text-slate-300 transition-colors group-hover/row:text-blue-400 dark:text-slate-600" />
-                            </a>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                            </div>
+                            <ExternalLink className="h-3.5 w-3.5 flex-shrink-0 text-slate-300 transition-colors group-hover/row:text-blue-400 dark:text-slate-600" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>

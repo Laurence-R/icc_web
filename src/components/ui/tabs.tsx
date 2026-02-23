@@ -79,7 +79,6 @@ export const Tabs = ({
       <FadeInDiv
         tabs={tabs}
         active={active}
-        key={active.value}
         hovering={hovering}
         className={cn("mt-32", contentClassName)}
         contentMaxHeight={contentMaxHeight}
@@ -101,23 +100,19 @@ export const FadeInDiv = ({
   hovering?: boolean;
   contentMaxHeight?: string;
 }) => {
-  const isActive = (tab: Tab) => {
-    return tab.value === tabs[0].value;
-  };
   return (
     <div className="relative w-full">
       {tabs.map((tab, idx) => (
         <motion.div
           key={tab.value}
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{
             opacity: idx < 3 ? 1 - idx * 0.1 : 0,
-            y: 0,
             scale: 1 - idx * 0.1,
             top: hovering ? idx * -50 : 0,
           }}
           transition={{
-            duration: 0.4,
+            duration: 0.3,
             ease: "easeOut",
           }}
           style={{
@@ -135,7 +130,10 @@ export const FadeInDiv = ({
             className
           )}
         >
-          {tab.content}
+          {/* Only render content for the active tab; background tabs show an empty placeholder */}
+          {idx === 0 ? tab.content : (
+            <div className="h-32 rounded-2xl border border-slate-200/40 bg-white/60 dark:border-white/5 dark:bg-gray-950/60" />
+          )}
         </motion.div>
       ))}
     </div>
