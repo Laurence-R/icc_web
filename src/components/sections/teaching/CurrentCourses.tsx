@@ -52,9 +52,8 @@ function CourseCard({
                     {course.code}
                   </span>
                   <span
-                    className={`rounded-md px-2 py-0.5 text-xs font-semibold text-white ${
-                      course.type === "必修" ? "bg-rose-500" : "bg-blue-500"
-                    }`}
+                    className={`rounded-md px-2 py-0.5 text-xs font-semibold text-white ${course.type === "必修" ? "bg-rose-500" : "bg-blue-500"
+                      }`}
                   >
                     {course.type}
                   </span>
@@ -146,7 +145,7 @@ export function CurrentCourses() {
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 dark:border-emerald-800/50 dark:bg-emerald-900/20">
           <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" />
           <span className="text-xs font-medium text-emerald-700 dark:text-emerald-400">
-            114 學年度第 1 學期
+            114 學年度第 2 學期
           </span>
         </div>
         <span className="text-xs text-slate-400 dark:text-slate-500">
@@ -154,11 +153,23 @@ export function CurrentCourses() {
         </span>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {currentCourses.map((course, i) => (
-          <CourseCard key={i} course={course} index={i} />
-        ))}
-      </div>
+      {currentCourses.length === 0 ? (
+        <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-slate-200 bg-slate-50/50 py-16 text-center dark:border-white/10 dark:bg-white/[0.02]">
+          <GraduationCap className="mb-3 h-10 w-10 text-slate-300 dark:text-slate-600" />
+          <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
+            本學期課程資訊即將公告
+          </p>
+          <p className="mt-1 text-xs teㄉxt-slate-400 dark:text-slate-500">
+            請稍後再回來查看
+          </p>
+        </div>
+      ) : (
+        <div className="grid gap-5 sm:grid-cols-2">
+          {currentCourses.map((course, i) => (
+            <CourseCard key={i} course={course} index={i} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

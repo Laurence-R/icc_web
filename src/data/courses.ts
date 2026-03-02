@@ -25,56 +25,62 @@ export interface HistorySemester {
 
 export const currentCourses: CurrentCourse[] = [
   {
-    name: "電腦網路",
-    code: "資工二",
-    type: "必修",
-    description:
-      "介紹電腦網路的基本原理、協定與應用，包含網路架構、傳輸層、網路層等核心概念。",
-    schedule: "每週(三) 09:05 - 12:00",
-    classroom: "資工電腦教室(一)",
-    link: "https://people.csie.ncue.edu.tw/icchang/course/nt1/114-1-nt.html",
-    color: "from-blue-500 to-cyan-500",
-    highlights: ["TCP/IP 協定", "基本網路架構", "傳輸層設計", "路由演算法"],
-  },
-  {
     name: "物聯網",
-    code: "資工碩一",
+    code: "資工三",
     type: "選修",
     description:
       "探討物聯網技術與應用，包含感測器網路、無線通訊、雲端運算及實作專題。",
-    schedule: "每週(二) 09:05 - 12:00",
+    schedule: "每週(二) 09:10 - 12:00",
     classroom: "資工電腦教室(二)",
-    link: "https://people.csie.ncue.edu.tw/icchang/course/IoT/114-1-IoT.html",
+    link: "",
     color: "from-violet-500 to-purple-500",
     highlights: ["感測器網路", "無線通訊", "雲端運算", "專題實作"],
   },
   {
-    name: "書報討論",
-    code: "人工智慧應用服務碩士在職專班一",
-    type: "必修",
+    name: "電腦網路進階",
+    code: "資工二",
+    type: "選修",
     description:
-      "研討最新的研究論文與技術發展，訓練學生的論文閱讀、批判性思考及口頭報告能力。",
-    schedule: "每週(三) 18:20 - 20:05",
-    classroom: "資工研討室(二)",
-    link: "https://people.csie.ncue.edu.tw/icchang/course/seminar/114-1 seminar.htm",
-    color: "from-emerald-500 to-teal-500",
-    highlights: ["論文研討", "批判思考", "口頭報告", "學術寫作"],
-  },
-  {
-    name: "網路通訊專題(二)",
-    code: "資工四",
-    type: "必修",
-    description:
-      "研討最新的研究論文與技術發展，訓練學生的論文閱讀以及批判性思考，讓學生了解系統整合流程與實作能力。",
-    schedule: "每週(六) 08:10 - 12:00",
+      "深入探討電腦網路進階議題，包含網路安全、軟體定義網路、網路效能分析與最新協定發展。",
+    schedule: "每週(四) 09:10 - 12:00",
     classroom: "資工電腦教室(一)",
-    link: "https://webap0.ncue.edu.tw/DEANV2/UploadDEAN/SUBJECT/1141/54020_1EICS0024920.pdf",
-    color: "from-amber-500 to-orange-500",
-    highlights: ["論文研討", "批判思考", "專題報告", "學術研究"],
+    link: "",
+    color: "from-blue-500 to-cyan-500",
+    highlights: ["網路安全", "軟體定義網路", "效能分析", "進階協定"],
   },
 ];
 
 export const courseHistory: HistorySemester[] = [
+  {
+    year: "114",
+    semester: "1",
+    courses: [
+      {
+        name: "電腦網路",
+        code: "資工二",
+        type: "必修",
+        link: "https://people.csie.ncue.edu.tw/icchang/course/nt1/114-1-nt.html",
+      },
+      {
+        name: "物聯網",
+        code: "資工碩一",
+        type: "選修",
+        link: "https://people.csie.ncue.edu.tw/icchang/course/IoT/114-1-IoT.html",
+      },
+      {
+        name: "書報討論",
+        code: "人工智慧應用服務碩士在職專班一",
+        type: "必修",
+        link: "https://people.csie.ncue.edu.tw/icchang/course/seminar/114-1 seminar.htm",
+      },
+      {
+        name: "網路通訊專題(二)",
+        code: "資工四",
+        type: "必修",
+        link: "https://webap0.ncue.edu.tw/DEANV2/UploadDEAN/SUBJECT/1141/54020_1EICS0024920.pdf",
+      },
+    ],
+  },
   {
     year: "113",
     semester: "2",
