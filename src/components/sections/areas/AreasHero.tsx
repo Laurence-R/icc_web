@@ -19,7 +19,7 @@ export default function AreasHero() {
       >
         <Globe className="h-16 w-16 text-blue-600 dark:text-blue-400" />
       </motion.div>
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent mb-4">
         研究方向
       </h1>
       <p className="text-2xl text-gray-600 dark:text-gray-400 mb-4">

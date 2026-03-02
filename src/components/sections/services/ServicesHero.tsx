@@ -19,7 +19,7 @@ export default function ServicesHero() {
       >
         <Award className="h-16 w-16 text-purple-600 dark:text-purple-400" />
       </motion.div>
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 bg-clip-text text-transparent mb-4">
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-rose-600 dark:from-purple-400 dark:via-pink-400 dark:to-rose-400 bg-clip-text text-transparent mb-4">
         學術服務
       </h1>
       <p className="text-2xl text-gray-600 dark:text-gray-400 mb-4">

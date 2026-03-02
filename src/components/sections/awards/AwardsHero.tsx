@@ -59,11 +59,11 @@ export default function AwardsHero() {
           className="inline-block mb-6"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 dark:from-yellow-500/20 dark:via-amber-500/20 dark:to-orange-500/20 rounded-full blur-2xl opacity-30 animate-pulse"></div>
             <Trophy className="h-20 w-20 text-amber-600 dark:text-amber-400 relative z-10" />
           </div>
         </motion.div>
-        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-orange-600 bg-clip-text text-transparent mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-orange-600 dark:from-amber-400 dark:via-yellow-400 dark:to-orange-400 bg-clip-text text-transparent mb-4">
           榮譽與獎項
           <span className="block text-2xl md:text-3xl bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-300 dark:to-gray-500 bg-clip-text text-transparent font-normal mt-2">
             Honors & Awards

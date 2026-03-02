@@ -19,7 +19,7 @@ export function PublicationsHero() {
       >
         <BookOpen className="h-16 w-16 text-blue-600 dark:text-blue-400" />
       </motion.div>
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent mb-4">
         論文著作
       </h1>
       <p className="text-2xl text-gray-600 dark:text-gray-400 mb-4">

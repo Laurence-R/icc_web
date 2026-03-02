@@ -31,7 +31,7 @@ export default function ServicesStats() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-300 bg-clip-text text-transparent">
               {allServices.length}
             </div>
             <p className="text-xs text-muted-foreground">學術服務項目</p>
@@ -51,7 +51,7 @@ export default function ServicesStats() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
               {educationCourses.length}
             </div>
             <p className="text-xs text-muted-foreground">課程計畫</p>
@@ -71,7 +71,7 @@ export default function ServicesStats() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-300 bg-clip-text text-transparent">
               {reviewServices.length}
             </div>
             <p className="text-xs text-muted-foreground">審查服務</p>
@@ -91,7 +91,7 @@ export default function ServicesStats() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-400 dark:from-indigo-400 dark:to-indigo-300 bg-clip-text text-transparent">
               {thesisCommittee.length}
             </div>
             <p className="text-xs text-muted-foreground">學位口試</p>
@@ -111,7 +111,7 @@ export default function ServicesStats() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+            <div className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 dark:from-orange-400 dark:to-orange-300 bg-clip-text text-transparent">
               {projectReview.length}
             </div>
             <p className="text-xs text-muted-foreground">評審項目</p>

@@ -10,7 +10,7 @@ export default function AreasStats() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.8 }}
     >
-      <Card className="p-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <Card className="p-8 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-700 dark:to-purple-700 text-white">
         <h2 className="text-2xl font-bold mb-6 text-center">研究成果統計</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>

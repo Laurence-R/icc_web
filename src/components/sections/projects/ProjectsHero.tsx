@@ -19,7 +19,7 @@ export default function ProjectsHero() {
       >
         <Briefcase className="h-16 w-16 text-green-600 dark:text-green-400" />
       </motion.div>
-      <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 dark:from-green-400 dark:via-emerald-400 dark:to-teal-400 bg-clip-text text-transparent mb-4">
         研究計畫
       </h1>
       <p className="text-2xl text-gray-600 dark:text-gray-400 mb-4">

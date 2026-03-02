@@ -37,7 +37,7 @@ export default function ProjectsStats() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                 總計畫數
               </p>
-              <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+              <p className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
                 {stats.total}
               </p>
             </div>
@@ -58,7 +58,7 @@ export default function ProjectsStats() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                 主持計畫
               </p>
-              <p className="text-4xl font-bold bg-gradient-to-r from-green-600 to-green-400 bg-clip-text text-transparent">
+              <p className="text-4xl font-bold bg-gradient-to-r from-green-600 to-green-400 dark:from-green-400 dark:to-green-300 bg-clip-text text-transparent">
                 {stats.main}
               </p>
             </div>
@@ -79,7 +79,7 @@ export default function ProjectsStats() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                 指導專題
               </p>
-              <p className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
+              <p className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 dark:from-purple-400 dark:to-purple-300 bg-clip-text text-transparent">
                 {stats.student}
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function ProjectsStats() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">
                 總經費
               </p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+              <p className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-orange-400 dark:from-orange-400 dark:to-orange-300 bg-clip-text text-transparent">
                 {(stats.totalBudget / 1000000).toFixed(1)}M
               </p>
             </div>
