@@ -138,22 +138,23 @@ export function CourseHistory() {
                                 <span className="text-sm font-medium text-slate-800 transition-colors group-hover/row:text-blue-600 dark:text-slate-200 dark:group-hover/row:text-blue-400">
                                   {course.name}
                                 </span>
-                                <div className="mt-0.5 flex items-center gap-1.5">
-                                  <span className="text-[11px] text-slate-400 dark:text-slate-500">
-                                    {course.code}
-                                  </span>
-                                  <span
-                                    className={`rounded px-1.5 py-px text-[10px] font-semibold text-white ${course.type === "必修"
-                                      ? "bg-rose-500"
-                                      : "bg-blue-500"
-                                      }`}
-                                  >
-                                    {course.type}
-                                  </span>
-                                </div>
+                                <p className="mt-0.5 text-[11px] text-slate-400 dark:text-slate-500">
+                                  {course.code}
+                                </p>
                               </div>
                             </div>
-                            <ExternalLink className="h-3.5 w-3.5 flex-shrink-0 text-slate-300 transition-colors group-hover/row:text-blue-400 dark:text-slate-600" />
+                            <div className="flex flex-shrink-0 items-center gap-2">
+                              <span
+                                className={`rounded px-2 py-0.5 text-[10px] font-semibold text-white ${
+                                  course.type === "必修"
+                                    ? "bg-rose-500"
+                                    : "bg-blue-500"
+                                }`}
+                              >
+                                {course.type}
+                              </span>
+                              <ExternalLink className="h-3.5 w-3.5 text-slate-300 transition-colors group-hover/row:text-blue-400 dark:text-slate-600" />
+                            </div>
                           </a>
                         ))}
                       </div>

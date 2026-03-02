@@ -9,7 +9,6 @@ const contacts = [
     icon: Mail,
     label: "電子郵件",
     value: "icchang@cc.ncue.edu.tw",
-    href: "mailto:icchang@cc.ncue.edu.tw",
     color: "from-blue-500 to-cyan-400",
     iconColor: "text-blue-500 dark:text-blue-400",
   },
@@ -89,24 +88,10 @@ export function ContactInfo() {
                   <p className="text-xs font-medium text-slate-400 dark:text-slate-500">
                     {item.label}
                   </p>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="text-sm font-medium text-slate-700 transition-colors hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-400"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
-                      {item.value}
-                    </p>
-                  )}
+                  <p className="text-sm font-medium text-slate-700 dark:text-slate-200">
+                    {item.value}
+                  </p>
                 </div>
-
-                {/* External link hint for email */}
-                {item.href && (
-                  <ExternalLink className="h-3.5 w-3.5 flex-shrink-0 text-slate-300 transition-colors group-hover:text-blue-400 dark:text-slate-600" />
-                )}
               </div>
             </motion.div>
           ))}

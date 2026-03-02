@@ -36,7 +36,7 @@ export function PublicationsHero() {
       >
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
           <p className="text-sm text-gray-700 dark:text-gray-300 text-center">
-            💡 <span className="font-medium">完整資料查詢：</span>
+            <span className="font-bold">完整資料查詢：</span>
             如需查看完整論文內容，請前往
             <a
               href="https://ieeexplore.ieee.org/author/37640555800"

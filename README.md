@@ -13,17 +13,17 @@ This is the personal academic website of a professor in the Department of Comput
 
 ## Pages
 
-| Path | Description |
-|------|-------------|
-| `/` | Homepage with research overview and selected publications |
-| `/about` | Biography, education timeline, and contact information |
-| `/research/areas` | Research areas and focus topics |
-| `/research/publications` | Full publication list with filtering |
-| `/research/projects` | Funded research projects |
-| `/research/awards` | Honors and awards |
-| `/research/lab` | Laboratory introduction |
-| `/research/services` | Academic and professional services |
-| `/teaching` | Current and past courses |
+| Path                     | Description                                               |
+| ------------------------ | --------------------------------------------------------- |
+| `/`                      | Homepage with research overview and selected publications |
+| `/about`                 | Biography, education timeline, and contact information    |
+| `/research/areas`        | Research areas and focus topics                           |
+| `/research/publications` | Full publication list with filtering                      |
+| `/research/projects`     | Funded research projects                                  |
+| `/research/awards`       | Honors and awards                                         |
+| `/research/lab`          | Laboratory introduction                                   |
+| `/research/services`     | Academic and professional services                        |
+| `/teaching`              | Current and past courses                                  |
 
 ## Local Development
 
@@ -57,24 +57,24 @@ The site will be available at `http://localhost:3000`.
 
 ### Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start the development server with hot reload |
-| `npm run build` | Build the production bundle |
-| `npm run start` | Start the production server |
-| `npm run lint` | Run ESLint |
+| Command         | Description                                  |
+| --------------- | -------------------------------------------- |
+| `npm run dev`   | Start the development server with hot reload |
+| `npm run build` | Build the production bundle                  |
+| `npm run start` | Start the production server                  |
+| `npm run lint`  | Run ESLint                                   |
 
 ## Updating Content
 
 All site content is managed through TypeScript data files located in `src/data/`:
 
-| File | Content |
-|------|---------|
-| `courses.ts` | Current semester courses and course history |
-| `publications.ts` | Research publications |
-| `projects.ts` | Research projects |
-| `awards.ts` | Awards and honors |
-| `services.ts` | Academic and professional services |
+| File              | Content                                     |
+| ----------------- | ------------------------------------------- |
+| `courses.ts`      | Current semester courses and course history |
+| `publications.ts` | Research publications                       |
+| `projects.ts`     | Research projects                           |
+| `awards.ts`       | Awards and honors                           |
+| `services.ts`     | Academic and professional services          |
 
 ## Deployment
 

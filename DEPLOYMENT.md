@@ -148,13 +148,13 @@ pm2 restart prof-site
 
 ## Useful PM2 Commands
 
-| Command | Description |
-|---------|-------------|
-| `pm2 list` | Show all running processes |
-| `pm2 logs prof-site` | View application logs |
-| `pm2 restart prof-site` | Restart the application |
-| `pm2 stop prof-site` | Stop the application |
-| `pm2 delete prof-site` | Remove the process from PM2 |
+| Command                 | Description                 |
+| ----------------------- | --------------------------- |
+| `pm2 list`              | Show all running processes  |
+| `pm2 logs prof-site`    | View application logs       |
+| `pm2 restart prof-site` | Restart the application     |
+| `pm2 stop prof-site`    | Stop the application        |
+| `pm2 delete prof-site`  | Remove the process from PM2 |
 
 ---
 
