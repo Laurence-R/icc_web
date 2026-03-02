@@ -50,7 +50,7 @@ export function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="nav-glass sticky top-0 z-50 w-full">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-950/[0.06] dark:border-white/[0.07] bg-white/70 dark:bg-gray-950/70 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo / Name */}

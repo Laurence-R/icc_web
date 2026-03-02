@@ -3,30 +3,7 @@
 import { motion } from "motion/react";
 import { Spotlight } from "@/components/ui/spotlight-new";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { Tabs } from "@/components/ui/tabs";
-import { CurrentCourses } from "@/components/sections/teaching/CurrentCourses";
-import { CourseHistory } from "@/components/sections/teaching/CourseHistory";
-
-const tabs = [
-  {
-    title: "目前課程",
-    value: "current",
-    content: (
-      <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/60 bg-white/90 p-6 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-gray-950/90 sm:p-8">
-        <CurrentCourses />
-      </div>
-    ),
-  },
-  {
-    title: "歷年課程",
-    value: "history",
-    content: (
-      <div className="relative w-full overflow-hidden rounded-2xl border border-slate-200/60 bg-white/90 p-6 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-gray-950/90 sm:p-8">
-        <CourseHistory />
-      </div>
-    ),
-  },
-];
+import { CourseContent } from "@/components/sections/teaching/CourseContent";
 
 export default function TeachingPage() {
   return (
@@ -70,15 +47,8 @@ export default function TeachingPage() {
       </section>
 
       {/* Tabs section */}
-      <section className="relative mx-auto max-w-5xl px-6 pb-24">
-        <Tabs
-          tabs={tabs}
-          containerClassName="justify-center mb-8"
-          tabClassName="text-sm font-medium px-5 py-2"
-          activeTabClassName="bg-gradient-to-r from-blue-500/10 to-violet-500/10 dark:from-blue-500/20 dark:to-violet-500/20"
-          contentClassName="mt-6"
-          contentMaxHeight="65vh"
-        />
+      <section className="relative mx-auto max-w-5xl px-6 py-16">
+        <CourseContent />
       </section>
     </div>
   );

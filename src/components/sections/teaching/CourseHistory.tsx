@@ -65,8 +65,8 @@ export function CourseHistory() {
             <button
               key={t}
               onClick={() => setFilter(t)}
-              className={`rounded-lg px-4 py-2 text-xs font-medium transition-all ${filter === t
-                ? "bg-gradient-to-r from-blue-600 to-violet-600 text-white shadow-md"
+              className={`rounded-lg px-4 py-2 text-xs font-medium transition-all cursor-pointer ${filter === t
+                ? "bg-slate-900 text-white shadow-md"
                 : "bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-white/5 dark:text-slate-400 dark:hover:bg-white/10"
                 }`}
             >
@@ -79,7 +79,7 @@ export function CourseHistory() {
       {/* Timeline */}
       <div className="relative pl-5">
         {/* Vertical line */}
-        <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-400 via-violet-400 to-slate-200 dark:from-blue-600 dark:via-violet-600 dark:to-slate-800" />
+        <div className="absolute left-[27px] top-2 bottom-2 w-px bg-gradient-to-b from-blue-400 via-violet-400 to-slate-200 dark:from-blue-600 dark:via-violet-600 dark:to-slate-800" />
 
         <div className="space-y-4">
           {filtered.map((sem, idx) => {
@@ -168,7 +168,7 @@ export function CourseHistory() {
 
       {filtered.length === 0 && (
         <p className="mt-8 text-center text-sm text-slate-400 dark:text-slate-500">
-          找不到符合條件的課程
+          找不到符合條件的課程 = w =
         </p>
       )}
     </div>
