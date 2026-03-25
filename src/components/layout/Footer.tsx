@@ -12,8 +12,7 @@ const quickLinks = [
 ];
 
 const teachingLinks = [
-  { title: "目前課程", href: "/teaching/current" },
-  { title: "歷年課程", href: "/teaching/history" },
+  { title: "所有課程", href: "/teaching" },
   { title: "榮譽與獎項", href: "/research/awards" },
   { title: "實驗室", href: "/research/lab" },
 ];

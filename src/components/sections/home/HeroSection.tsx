@@ -38,7 +38,8 @@ export function HeroSection() {
             <Image
               src="/images/icc_hero.png"
               alt="張英超教授"
-              fill
+              fill={true}
+              sizes="(max-width: 640px) 144px, (max-width: 768px) 160px, 240px"
               className="object-contain drop-shadow-lg dark:drop-shadow-[0_4px_24px_rgba(100,140,255,0.15)]"
               priority
             />
